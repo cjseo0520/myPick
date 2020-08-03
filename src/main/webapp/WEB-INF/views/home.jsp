@@ -60,7 +60,35 @@ ul {
 
 .hiddenCity {
 	font-size: 15pt;
+	cursor: pointer;
 }
+.citySelect{
+    width: 400px;
+    height: 40px;
+    margin: auto;
+    margin-left: 10px;
+}
+.serchImg{
+    width: 60px;
+    height: 50px;
+}
+.serchCss{
+	width: 60px;
+    height: 50px;
+    float: left;
+}
+.inButton{
+	float: right;
+	cursor: pointer;
+}
+a {
+	color : blackl;
+	text-decoration: none;
+}
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+
 </style>
 <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.min.js"></script>
 <script>
@@ -79,22 +107,29 @@ ul {
         });
     });
 </script>
-
-
 <body>
      <div class="mainBody">
      	<div class=mainSearch>
 			    <ul>
 			        <li class="menu">
-			        <div class="city">지역명, 도시명</div>
+			        <div class="city"><label>지역명, 도시명 </label>
+			        	<div style="margin-top: 10px;">
+			        		<div class="serchCss">
+			        			<img src="${pageContext.request.contextPath }/img/serch.png" class="serchImg">
+			        		</div>
+			        		<div>
+			        			<input type="text" id="citySelect" class="citySelect" placeholder="지역을 입력해주세요"/>
+			        		</div>
+			        	</div>
+			        </div>
 			            <ul class="hide">
-			                <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">서울특별시</label></li>
-			                <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">부산광역시</label></li>
-			                <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대구광역시</label><li>
-			                <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">인천광역시</label></li>
-			                <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">광주광역시</label></li>
-		               		<li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대전광역시</label></li>
-        			        <li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">울산광역시</label></li>
+			                <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">서울특별시, 강남구 <label class="inButton">클릭</label></label></li></a>
+			                <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">부산광역시, 진구<label class="inButton">클릭</label></label></li></a>
+			                <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대구광역시, 수성구<label class="inButton">클릭</label></label><li></a>
+			                <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">인천광역시, 부평구<label class="inButton">클릭</label></label></li></a>
+			                <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">광주광역시, 서구<label class="inButton">클릭<label></label></li></a>
+		               		<a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대전광역시, 서구<label class="inButton">클릭</label></label></li></a>
+        			        <a href="#"><li><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">울산광역시, 남구<label class="inButton">클릭</label></label></li></a>
 			            </ul>
 			        </li>
 			    </ul>
