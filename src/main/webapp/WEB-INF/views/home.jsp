@@ -11,20 +11,7 @@
 
 </style>
 <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".menu>div").click(function(){
-            var submenu = $(this).next("ul");
- 
-            if( submenu.is(":visible") ){
-                submenu.slideUp();
-            }else{
-                submenu.slideDown();
-            }
-        });
-    });
-    
-</script>
+
 
 
 
@@ -46,11 +33,11 @@
 			            <ul class="hide" id="hide">
 			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">서울특별시, 강남구 </label></li>
 			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">부산광역시, 진구</label></li>
-			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대구광역시, 수성구<label class="inButton">클릭</label></label><li>
-			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">인천광역시, 부평구<label class="inButton">클릭</label></label></li>
-			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">광주광역시, 서구<label class="inButton">클릭<label></label></li>
-		               		<li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대전광역시, 서구<label class="inButton">클릭</label></label></li>
-        			        <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">울산광역시, 남구<label class="inButton">클릭</label></label></li>
+			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대구광역시, 수성구</label><li>
+			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">인천광역시, 부평구</label></li>
+			                <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">광주광역시, 서구</label></li>
+		               		<li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">대전광역시, 서구</label></li>
+        			        <li id="hideClick"><label class="hiddenCity"><img src="${pageContext.request.contextPath }/img/gps.png" class="hiddenImg">울산광역시, 남구</label></li>
 			            </ul>
 			        </li>
 			    </ul>
@@ -66,8 +53,23 @@
 	    </div>
 	    
 	</div>
-	
 <script>
+
+    
+</script>
+<script>
+	$(document).ready(function(){
+	    $(".menu>div").click(function(){
+	        var submenu = $(this).next("ul");
+	
+	        if( submenu.is(":visible") ){
+	            submenu.slideUp();
+	        }else{
+	            submenu.slideDown();
+	        }
+	    });
+	});
+
     function getEventTarget(e) {
         e = e || window.event;
         return e.target || e.srcElement; 
@@ -78,9 +80,20 @@
         var target = getEventTarget(event);
 		test = target.innerText.replace("클릭", "")
         document.getElementById("citySelect").value=(test);
-        var submenu = $(this).next("ul");
-        submenu.slideDown();
+		
     };
+    
+	$(document).ready(function() {
+		$(".hide>li").click(function() {
+			var submenu = $(this).parent
+			if (submenu.is(":visible")) {
+				submenu.slideUp();
+			} else {
+				submenu.slideDown();
+			}
+
+		});
+	});
 </script>
 </body>
 </html>
