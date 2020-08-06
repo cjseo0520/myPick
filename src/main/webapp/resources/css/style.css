@@ -66,46 +66,73 @@ ul {
 	font-size: 15pt;
 	cursor: pointer;
 }
-.citySelect{
-    width: 400px;
-    height: 40px;
-    margin: auto;
-    margin-left: 10px;
+
+.citySelect {
+	width: 400px;
+	height: 40px;
+	margin: auto;
+	margin-left: 10px;
 }
-.serchImg{
-    width: 60px;
-    height: 50px;
-}
-.serchCss{
+
+.serchImg {
 	width: 60px;
-    height: 50px;
-    float: left;
+	height: 50px;
 }
-.inButton{
+
+.serchCss {
+	width: 60px;
+	height: 50px;
+	float: left;
+}
+
+.inButton {
 	float: right;
 	cursor: pointer;
 }
+
 a {
-	color : blackl;
+	color: blackl;
 	text-decoration: none;
 }
- a:link { color: black; text-decoration: none;}
- a:visited { color: black; text-decoration: none;}
- a:hover { color: black; text-decoration: none;}
 
-.checkIn{
-	border: 1px solid;
-    width: 240px;
-    height: 100px;
-    float: left;
-    margin-left: 149px;	
-}
-.checkOut{
-	border: 1px solid;
-    width: 240px;
-    height: 100px;
-    float: right;
-    margin-right: 149px;	
+a:link {
+	color: black;
+	text-decoration: none;
 }
 
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.checkIn {
+	border: 1px solid;
+	width: 240px;
+	height: 100px;
+	float: left;
+	margin-left: 149px;
+	font-size: 20pt;
+}
+.calenderCss{
+	width: 60px;
+	height: 50px;
+	float: left;
+}
+.checkDate{
+	height: 40px;
+	margin: auto;
+}
+.checkOut {
+	border: 1px solid;
+	width: 240px;
+	height: 100px;
+	float: right;
+	margin-right: 149px;
+	font-size: 20pt;
+}
 }
