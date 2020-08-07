@@ -45,6 +45,7 @@
 ul {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .hide {
@@ -118,15 +119,18 @@ a:hover {
 	margin-left: 149px;
 	font-size: 20pt;
 }
-.calenderCss{
+
+.calenderCss {
 	width: 60px;
 	height: 50px;
 	float: left;
 }
-.checkDate{
+
+.checkDate {
 	height: 40px;
 	margin: auto;
 }
+
 .checkOut {
 	border: 1px solid;
 	width: 240px;
@@ -135,4 +139,83 @@ a:hover {
 	margin-right: 149px;
 	font-size: 20pt;
 }
+
+.selectMember {
+	border: 1px solid;
+	width: 500px;
+	height: 100px;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.tripCheckDate {
+	height: 100px;
+	margin-top: 10px;
+}
+
+.room {
+	width: 30%;
+	height: 100px;
+	float: left;
+	margin-left: 5%;
+	font-size: 20pt;
+}
+
+.adult {
+	width: 30%;
+	height: 100px;
+	float: left;
+	font-size: 20pt;
+}
+
+.child {
+	width: 30%;
+	height: 100px;
+	float: right;
+	margin-right: 5%;
+	font-size: 20pt;
+}
+
+.num {
+	color: #999;
+	margin-top: 5px;
+}
+
+.btnCss {
+	align-items: center;
+	display: inline-block;
+	border: 1px solid #d9cbb3;
+	color: black;
+	text-align: center;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	boarder: 0;
+	outline: 0;
+}
+
+.btnCss:hover {
+	background-color: #d9cbb3;
+	color: black;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+}
+
+.submit {
+	/* 	border: 1px solid; */
+	/* 	width: 500px; */
+	/* 	height: 100px; */
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.btnSubmit {
+	width: 500px;
+	height: 50px;
+	border-radius: 50px;
+	boarder: 0;
+	outline: 0;
 }
