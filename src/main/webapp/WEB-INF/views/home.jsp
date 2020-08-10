@@ -14,8 +14,9 @@
 </head>
 <style>
 </style>
-<%-- <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.min.js"></script> --%>
-<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+<body oncontextmenu='return false'>
+	<form method="POST">
 	<div class="mainBody">
 		<div class=mainSearch>
 			<ul>
@@ -28,7 +29,7 @@
 									class="serchImg">
 							</div>
 							<div>
-								<input type="text" id="citySelect" class="citySelect"
+								<input type="text" id="citySelect" class="citySelect" name="city"
 									placeholder="지역을 입력해주세요" />
 							</div>
 						</div>
@@ -43,7 +44,6 @@
 						<li id="hideClick"><label class="hiddenCity"><img
 								src="${pageContext.request.contextPath }/img/gps.png"
 								class="hiddenImg">대구광역시, 수성구</label>
-						<li>
 						<li id="hideClick"><label class="hiddenCity"><img
 								src="${pageContext.request.contextPath }/img/gps.png"
 								class="hiddenImg">인천광역시, 부평구</label></li>
@@ -67,7 +67,7 @@
 							<img src="${pageContext.request.contextPath }/img/calendar.png"
 								class="serchImg">
 						</div>
-						<input type="text" id="checkInDate" class="checkDate"
+						<input type="text" id="checkInDate" class="checkDate" name="checkIn"
 							readonly="readonly">
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 							<img src="${pageContext.request.contextPath }/img/calendar.png"
 								class="serchImg">
 						</div>
-						<input type="text" id="checkOutDate" class="checkDate"
+						<input type="text" id="checkOutDate" class="checkDate" name="checkOut"
 							readonly="readonly">
 					</div>
 				</div>
@@ -87,9 +87,9 @@
 				<div class="selectMember">
 					<div class="room">
 						객실
-						<div class="num" id="romNum">
+						<div class="num" id="romNum" >
 						<input type="button" value="◀" class="btnCss" onclick="onClickRoomL()"> 
-							<div id="roomLabel">1</div>
+							<b id="roomLabel" name=rowNum>1</b>
 						<input type="button" value="▶" class="btnCss" onclick="onClickRoomR()">
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 						성인
 						<div class="num" id="adultNum">
 						<input type="button" value="◀" class="btnCss" onclick="onClickAdultL()">
-						<label id="adultLabel">2</label>
+						<b id="adultLabel" name="adultNum">2</b>
 						<input type="button" value="▶" class="btnCss" onclick="onClickAdultR()">
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 						소인
 						<div class="num" id="childNum">
 						<input type="button" value="◀" class="btnCss" onclick="onClickChildL()">
-						<label id="childLabel">0</label> 
+						<b id="childLabel" name="childNum">0</b> 
 						<input type="button" value="▶" class="btnCss" onclick="onClickChildR()">
 						</div>
 					</div>
@@ -116,8 +116,8 @@
 			</div>
 		</div>
 	</div>
+	</form>
 	<script>
-		
 	</script>
 	<script>
 		//상위메뉴 누르면 열리기
@@ -186,31 +186,71 @@
 		//숫자 올리기
 		var numUpRool = 1;
 		var numUpAdult = 2;
-		var numUpChild = 1;
+		var numUpChild = 0;
 		function onClickRoomL() {
+			if(numUpRool <= 1){
+				alert('0이하로는 입력되지 않습니다.')
+				$('#roomLabel').text(numUpRool)	
+			}
+			else{
 			numUpRool--;
-			console.log(numUpRool)
-			$('#roomLabel').text(numUpRool)
+			console.log(typeof(numUpRool))
+			$('#roomLabel').text(numUpRool)				
+			}
 		}
 		function onClickRoomR() {
-			numUpRool++;
-			console.log(numUpRool)
+			if(numUpRool >=4){
+				alert('4개이상 방은 고객센터로 문의바랍니다.')
+				$('#roomLabel').text(numUpRool)		
+			}
+			else{
+				numUpRool++;
+				$('#roomLabel').text(numUpRool)				
+			}
 		}
 		function onClickAdultL() {
-			numUpAdult--;
-			console.log(numUpAdult)
+			if(numUpAdult <= 1){
+				alert('0이하로는 입력되지 않습니다.')
+				$('#adultLabel').text(numUpRool)
+			}
+			else{
+				numUpAdult--;
+				console.log(numUpAdult)
+				$('#adultLabel').text(numUpAdult)			
+			}
 		}
 		function onClickAdultR() {
-			numUpAdult++;
-			console.log(numUpAdult)
+			if(numUpAdult >= 8){
+				alert('8명 초과하는인원은 고객센터로 문의바랍니다.')
+				$('#adultLabel').text(numUpAdult)
+			}
+			else{
+				numUpAdult++;
+				console.log(numUpAdult)
+				$('#adultLabel').text(numUpAdult)			
+			}
 		}
 		function onClickChildL() {
-			numUpChild--;
-			console.log(numUpChild)
+			if(numUpChild <= 0){
+				alert('0이하로는 입력되지 않습니다.')
+				$('#childLabel').text(numUpChild)
+			}
+			else{
+				numUpChild--;
+				console.log(numUpChild)
+				$('#childLabel').text(numUpChild)			
+			}
 		}
 		function onClickChildR() {
-			numUpChild++;
-			console.log(numUpChild)
+			if(numUpChild >= 4){
+				alert('4명 초과하는인원은 고객센터로 문의바랍니다.')
+				$('#childLabel').text(numUpChild)
+			}
+			else{
+				numUpChild++;
+				console.log(numUpChild)
+				$('#childLabel').text(numUpChild)		
+			}
 		}
 	</script>
 </body>

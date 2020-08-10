@@ -94,7 +94,7 @@
 			</div>
 		</div>
 		<div class="mainImg">
-			<img alt="" src="${pageContext.request.contextPath }/img/main.png">
+			<img alt="" src="${pageContext.request.contextPath }/img/main.png" onclick="location.href='${pageContext.request.contextPath}'">
 		</div>
 		<div class="selectButton">
 			<div class="selectTitle">
