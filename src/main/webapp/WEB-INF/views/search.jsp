@@ -14,8 +14,9 @@
 </head>
 <body>
 	<div class="mainBody">
-		<p>디테일페이지</p>
-<%-- 		<p>${ }</p> --%>
+		<div class="detailBody">
+			<div id="detailImg"><img alt="" src=""></div>
+		</div>
 	</div>
 </body>
 </html>

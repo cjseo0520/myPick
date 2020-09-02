@@ -220,4 +220,10 @@ a:hover {
 	outline: 0;
 }
 /* search */
+.detailBody{
+	border: 1px solid;
+	width: 100px;
+	height: 50px;
+	}
+
 
